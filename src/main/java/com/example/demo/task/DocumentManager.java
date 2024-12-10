@@ -37,10 +37,6 @@ public class DocumentManager {
             }
 
         }
-        if (document.getCreated() == null) {
-            document.setCreated(Instant.now());
-        }
-
         storage.put(document.getId(), document);
         return document;
     }
@@ -52,7 +48,6 @@ public class DocumentManager {
      * @return list matched documents
      */
     public List<Document> search(SearchRequest request) {
-
         return storage.values().stream()
                 .filter(document -> matches(document, request))
                 .collect(Collectors.toList());

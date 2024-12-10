@@ -35,7 +35,6 @@ public class DocumentManagerTest {
         DocumentManager.Document savedDocument = documentManager.save(document);
 
         assertNotNull(savedDocument.getId());
-        assertNotNull(savedDocument.getCreated());
         assertEquals("Java Tutorial", savedDocument.getTitle());
         assertEquals("Java was released in May 1995.", savedDocument.getContent());
         assertEquals("author1", savedDocument.getAuthor().getId());
